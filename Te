@@ -1,0 +1,158 @@
+local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+local player = Players.LocalPlayer
+
+-- Key system variables
+local validKey = "BASIC"
+local keyURL = "https://example.com"
+local discordURL = "https://discord.gg/example"
+
+-- UI creation
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICornerFrame = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
+local Title = Instance.new("TextLabel")
+local Description = Instance.new("TextLabel")
+local KeyInput = Instance.new("TextBox")
+local CheckKeyButton = Instance.new("TextButton")
+local GetKeyButton = Instance.new("TextButton")
+local CopyDiscordButton = Instance.new("TextButton")
+
+-- General Properties
+ScreenGui.Parent = player:WaitForChild("PlayerGui")
+
+-- Frame
+Frame.Parent = ScreenGui
+Frame.Size = UDim2.new(0, 400, 0, 250)
+Frame.Position = UDim2.new(0.5, -200, 0.5, -125)
+Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Frame.BorderSizePixel = 0
+Frame.Active = true
+Frame.Draggable = true
+
+UICornerFrame.Parent = Frame
+UICornerFrame.CornerRadius = UDim.new(0.1, 0)
+
+UIStroke.Parent = Frame
+UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Thickness = 2
+
+-- Title
+Title.Parent = Frame
+Title.Size = UDim2.new(1, 0, 0.2, 0)
+Title.Position = UDim2.new(0, 0, 0, 0)
+Title.Text = "Key System"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1
+Title.TextSize = 20
+Title.Font = Enum.Font.Oswald
+
+-- Description
+Description.Parent = Frame
+Description.Size = UDim2.new(1, 0, 0.15, 0)
+Description.Position = UDim2.new(0, 0, 0.2, 0)
+Description.Text = "Game Supported: [Name]\nCredits: by memecat0 on Discord"
+Description.TextColor3 = Color3.fromRGB(200, 200, 200)
+Description.BackgroundTransparency = 1
+Description.TextSize = 14
+Description.TextWrapped = true
+Description.Font = Enum.Font.Oswald
+
+-- Key Input
+KeyInput.Parent = Frame
+KeyInput.Size = UDim2.new(0.8, 0, 0.1, 0)
+KeyInput.Position = UDim2.new(0.1, 0, 0.4, 0)
+KeyInput.PlaceholderText = "Enter Key Here"
+KeyInput.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+KeyInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeyInput.BorderSizePixel = 0
+KeyInput.Font = Enum.Font.Oswald
+
+local UICornerKeyInput = Instance.new("UICorner")
+UICornerKeyInput.Parent = KeyInput
+UICornerKeyInput.CornerRadius = UDim.new(0.1, 0)
+
+-- Check Key Button
+CheckKeyButton.Parent = Frame
+CheckKeyButton.Size = UDim2.new(0.4, 0, 0.1, 0)
+CheckKeyButton.Position = UDim2.new(0.1, 0, 0.55, 0)
+CheckKeyButton.Text = "Check Key"
+CheckKeyButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+CheckKeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CheckKeyButton.BorderSizePixel = 0
+CheckKeyButton.Font = Enum.Font.Oswald
+
+local UICornerCheckKey = Instance.new("UICorner")
+UICornerCheckKey.Parent = CheckKeyButton
+UICornerCheckKey.CornerRadius = UDim.new(0.1, 0)
+
+-- Get Key Button
+GetKeyButton.Parent = Frame
+GetKeyButton.Size = UDim2.new(0.4, 0, 0.1, 0)
+GetKeyButton.Position = UDim2.new(0.5, 0, 0.55, 0)
+GetKeyButton.Text = "Get Key"
+GetKeyButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+GetKeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+GetKeyButton.BorderSizePixel = 0
+GetKeyButton.Font = Enum.Font.Oswald
+
+local UICornerGetKey = Instance.new("UICorner")
+UICornerGetKey.Parent = GetKeyButton
+UICornerGetKey.CornerRadius = UDim.new(0.1, 0)
+
+-- Discord Copy Link Button
+CopyDiscordButton.Parent = Frame
+CopyDiscordButton.Size = UDim2.new(0.8, 0, 0.1, 0)
+CopyDiscordButton.Position = UDim2.new(0.1, 0, 0.7, 0)
+CopyDiscordButton.Text = "Copy Discord Link"
+CopyDiscordButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+CopyDiscordButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CopyDiscordButton.BorderSizePixel = 0
+CopyDiscordButton.Font = Enum.Font.Oswald
+
+local UICornerDiscord = Instance.new("UICorner")
+UICornerDiscord.Parent = CopyDiscordButton
+UICornerDiscord.CornerRadius = UDim.new(0.1, 0)
+
+-- Button Functions
+CheckKeyButton.MouseButton1Click:Connect(function()
+    if KeyInput.Text == validKey then
+        StarterGui:SetCore("SendNotification", {
+            Title = "Success",
+            Text = "Key is valid! Executing...",
+            Icon = "rbxassetid://12345678",
+            Duration = 3
+        })
+        wait(3)
+        print("Success thank you :3 for wait 3 sec!")
+        wait(1)
+        print("hello")
+        ScreenGui:Destroy() -- Destroy the UI after successful validation
+    else
+        StarterGui:SetCore("SendNotification", {
+            Title = "Invalid",
+            Text = "Key is incorrect!",
+            Icon = "rbxassetid://12345678",
+            Duration = 3
+        })
+    end
+end)
+
+GetKeyButton.MouseButton1Click:Connect(function()
+    setclipboard(keyURL)
+    StarterGui:SetCore("SendNotification", {
+        Title = "Copied",
+        Text = "Key URL copied to clipboard!",
+        Duration = 3
+    })
+end)
+
+CopyDiscordButton.MouseButton1Click:Connect(function()
+    setclipboard(discordURL)
+    StarterGui:SetCore("SendNotification", {
+        Title = "Copied",
+        Text = "Discord link copied to clipboard!",
+        Duration = 3
+    })
+end)
