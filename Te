@@ -5,7 +5,7 @@ local player = Players.LocalPlayer
 -- Key system variables
 local validKey = "BASIC"
 local keyURL = "https://example.com"
-local discordURL = "https://discord.gg/example"
+local discordURL = "https://discord.gg/j8Kdtnz6CA"
 
 -- UI creation
 local ScreenGui = Instance.new("ScreenGui")
@@ -46,7 +46,7 @@ Title.Text = "Key System"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.BackgroundTransparency = 1
 Title.TextSize = 20
-Title.Font = Enum.Font.Oswald
+Title.Font = Enum.Font.FredokaOne
 
 -- Description
 Description.Parent = Frame
@@ -57,7 +57,7 @@ Description.TextColor3 = Color3.fromRGB(200, 200, 200)
 Description.BackgroundTransparency = 1
 Description.TextSize = 14
 Description.TextWrapped = true
-Description.Font = Enum.Font.Oswald
+Description.Font = Enum.Font.FredokaOne
 
 -- Key Input
 KeyInput.Parent = Frame
@@ -67,7 +67,7 @@ KeyInput.PlaceholderText = "Enter Key Here"
 KeyInput.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 KeyInput.TextColor3 = Color3.fromRGB(255, 255, 255)
 KeyInput.BorderSizePixel = 0
-KeyInput.Font = Enum.Font.Oswald
+KeyInput.Font = Enum.Font.FredokaOne
 
 local UICornerKeyInput = Instance.new("UICorner")
 UICornerKeyInput.Parent = KeyInput
@@ -81,7 +81,7 @@ CheckKeyButton.Text = "Check Key"
 CheckKeyButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 CheckKeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 CheckKeyButton.BorderSizePixel = 0
-CheckKeyButton.Font = Enum.Font.Oswald
+CheckKeyButton.Font = Enum.Font.FredokaOne
 
 local UICornerCheckKey = Instance.new("UICorner")
 UICornerCheckKey.Parent = CheckKeyButton
@@ -95,7 +95,7 @@ GetKeyButton.Text = "Get Key"
 GetKeyButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 GetKeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 GetKeyButton.BorderSizePixel = 0
-GetKeyButton.Font = Enum.Font.Oswald
+GetKeyButton.Font = Enum.Font.FredokaOne
 
 local UICornerGetKey = Instance.new("UICorner")
 UICornerGetKey.Parent = GetKeyButton
@@ -109,7 +109,7 @@ CopyDiscordButton.Text = "Copy Discord Link"
 CopyDiscordButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 CopyDiscordButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 CopyDiscordButton.BorderSizePixel = 0
-CopyDiscordButton.Font = Enum.Font.Oswald
+CopyDiscordButton.Font = Enum.Font.FredokaOne
 
 local UICornerDiscord = Instance.new("UICorner")
 UICornerDiscord.Parent = CopyDiscordButton
@@ -124,9 +124,9 @@ CheckKeyButton.MouseButton1Click:Connect(function()
             Icon = "rbxassetid://12345678",
             Duration = 3
         })
-        wait(3)
+        wait(0.1)
         print("Success thank you :3 for wait 3 sec!")
-        wait(1)
+        wait(3)
         print("hello")
         ScreenGui:Destroy() -- Destroy the UI after successful validation
     else
