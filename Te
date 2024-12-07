@@ -14,6 +14,8 @@ local UICornerFrame = Instance.new("UICorner")
 local UIStroke = Instance.new("UIStroke")
 local Title = Instance.new("TextLabel")
 local Description = Instance.new("TextLabel")
+local SupportedGameText = Instance.new("TextLabel")
+local CreditsText = Instance.new("TextLabel")
 local KeyInput = Instance.new("TextBox")
 local CheckKeyButton = Instance.new("TextButton")
 local GetKeyButton = Instance.new("TextButton")
@@ -24,8 +26,8 @@ ScreenGui.Parent = player:WaitForChild("PlayerGui")
 
 -- Frame
 Frame.Parent = ScreenGui
-Frame.Size = UDim2.new(0, 400, 0, 250)
-Frame.Position = UDim2.new(0.5, -200, 0.5, -125)
+Frame.Size = UDim2.new(0, 400, 0, 300)
+Frame.Position = UDim2.new(0.5, -200, 0.5, -150)
 Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 Frame.BorderSizePixel = 0
 Frame.Active = true
@@ -40,24 +42,44 @@ UIStroke.Thickness = 2
 
 -- Title
 Title.Parent = Frame
-Title.Size = UDim2.new(1, 0, 0.2, 0)
+Title.Size = UDim2.new(1, 0, 0.15, 0)
 Title.Position = UDim2.new(0, 0, 0, 0)
 Title.Text = "Key System"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.BackgroundTransparency = 1
-Title.TextSize = 20
+Title.TextSize = 25
 Title.Font = Enum.Font.FredokaOne
 
 -- Description
 Description.Parent = Frame
-Description.Size = UDim2.new(1, 0, 0.15, 0)
-Description.Position = UDim2.new(0, 0, 0.2, 0)
-Description.Text = "Game Supported: [Name]"
+Description.Size = UDim2.new(1, 0, 0.1, 0)
+Description.Position = UDim2.new(0, 0, 0.15, 0)
+Description.Text = "Use the key system to unlock exclusive features!"
 Description.TextColor3 = Color3.fromRGB(200, 200, 200)
 Description.BackgroundTransparency = 1
-Description.TextSize = 20
+Description.TextSize = 16
 Description.TextWrapped = true
 Description.Font = Enum.Font.FredokaOne
+
+-- Supported Game Text
+SupportedGameText.Parent = Frame
+SupportedGameText.Size = UDim2.new(1, 0, 0.1, 0)
+SupportedGameText.Position = UDim2.new(0, 0, 0.25, 0)
+SupportedGameText.Text = "Supported Game: Game Name Here"
+SupportedGameText.TextColor3 = Color3.fromRGB(150, 150, 150)
+SupportedGameText.BackgroundTransparency = 1
+SupportedGameText.TextSize = 14
+SupportedGameText.Font = Enum.Font.FredokaOne
+
+-- Credits Text
+CreditsText.Parent = Frame
+CreditsText.Size = UDim2.new(1, 0, 0.05, 0)
+CreditsText.Position = UDim2.new(0, 0, 0.95, 0)
+CreditsText.Text = "Credits Made by memecat0 | Tweak by KanKai_Ku on Discord"
+CreditsText.TextColor3 = Color3.fromRGB(100, 100, 100)
+CreditsText.BackgroundTransparency = 1
+CreditsText.TextSize = 14
+CreditsText.Font = Enum.Font.FredokaOne
 
 -- Key Input
 KeyInput.Parent = Frame
