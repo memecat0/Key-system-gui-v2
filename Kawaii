@@ -3,7 +3,7 @@ local StarterGui = game:GetService("StarterGui")
 local player = Players.LocalPlayer
 
 -- Key system variables
-local validKey = "BASIC"
+local validKey = "Basic"
 local keyURL = "https://example.com"
 local discordURL = "https://discord.gg/j8Kdtnz6CA"
 
@@ -14,6 +14,8 @@ local UICornerFrame = Instance.new("UICorner")
 local UIStroke = Instance.new("UIStroke")
 local Title = Instance.new("TextLabel")
 local Description = Instance.new("TextLabel")
+local SupportedGameText = Instance.new("TextLabel")
+local CreditsText = Instance.new("TextLabel")
 local KeyInput = Instance.new("TextBox")
 local CheckKeyButton = Instance.new("TextButton")
 local GetKeyButton = Instance.new("TextButton")
@@ -24,48 +26,69 @@ ScreenGui.Parent = player:WaitForChild("PlayerGui")
 
 -- Frame
 Frame.Parent = ScreenGui
-Frame.Size = UDim2.new(0, 400, 0, 250)
-Frame.Position = UDim2.new(0.5, -200, 0.5, -125)
+Frame.Size = UDim2.new(0, 400, 0, 265)
+Frame.Position = UDim2.new(0.5, -200, 0.5, -150)
 Frame.BackgroundColor3 = Color3.fromRGB(255, 182, 193) -- Pink
 Frame.BorderSizePixel = 0
 Frame.Active = true
 Frame.Draggable = true
 
 UICornerFrame.Parent = Frame
-UICornerFrame.CornerRadius = UDim.new(0.2, 0)
+UICornerFrame.CornerRadius = UDim.new(0.1, 0)
 
 UIStroke.Parent = Frame
 UIStroke.Color = Color3.fromRGB(255, 105, 180) -- Hot pink
-UIStroke.Thickness = 3
+UIStroke.Thickness = 2
 
 -- Title
 Title.Parent = Frame
-Title.Size = UDim2.new(1, 0, 0.2, 0)
+Title.Size = UDim2.new(1, 0, 0.15, 0)
 Title.Position = UDim2.new(0, 0, 0, 0)
-Title.Text = "Kawaii Key System <3"
+Title.Text = "<3 Key System UwU <3"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.BackgroundTransparency = 1
-Title.TextSize = 22
+Title.TextSize = 25
 Title.Font = Enum.Font.FredokaOne
 
 -- Description
 Description.Parent = Frame
-Description.Size = UDim2.new(1, 0, 0.15, 0)
-Description.Position = UDim2.new(0, 0, 0.2, 0)
-Description.Text = "Game: [Name]\nCredits: KanKai <3"
-Description.TextColor3 = Color3.fromRGB(255, 192, 203) -- Light pink
+Description.Size = UDim2.new(1, 0, 0.1, 0)
+Description.Position = UDim2.new(0, 0, 0.15, 0)
+Description.Text = "Unlock exclusive kawaii features now!"
+Description.TextColor3 = Color3.fromRGB(255, 228, 225) -- Light pink
 Description.BackgroundTransparency = 1
-Description.TextSize = 14
+Description.TextSize = 16
 Description.TextWrapped = true
 Description.Font = Enum.Font.FredokaOne
+
+-- Supported Game Text
+SupportedGameText.Parent = Frame
+SupportedGameText.Size = UDim2.new(1, 0, 0.1, 0)
+SupportedGameText.Position = UDim2.new(0, 0, 0.25, 0)
+SupportedGameText.Text = "Supported Game: Name."
+SupportedGameText.TextColor3 = Color3.fromRGB(255, 255, 255)
+SupportedGameText.BackgroundTransparency = 1
+SupportedGameText.TextSize = 14
+SupportedGameText.Font = Enum.Font.FredokaOne
+
+-- Credits Text
+CreditsText.Parent = Frame
+CreditsText.Size = UDim2.new(1, 0, 0.05, 0)
+CreditsText.Position = UDim2.new(0, 0, 0.85, 0)
+CreditsText.Text = "Credits: KanKai_Ku"
+CreditsText.TextColor3 = Color3.fromRGB(255, 255, 255)
+CreditsText.BackgroundTransparency = 1
+CreditsText.TextSize = 14
+CreditsText.Font = Enum.Font.FredokaOne
 
 -- Key Input
 KeyInput.Parent = Frame
 KeyInput.Size = UDim2.new(0.8, 0, 0.1, 0)
 KeyInput.Position = UDim2.new(0.1, 0, 0.4, 0)
-KeyInput.PlaceholderText = "UwU Enter Key Here"
-KeyInput.BackgroundColor3 = Color3.fromRGB(255, 228, 225) -- Misty rose
-KeyInput.TextColor3 = Color3.fromRGB(255, 20, 147) -- Deep pink
+KeyInput.PlaceholderText = "Enter Key Here"
+KeyInput.BackgroundColor3 = Color3.fromRGB(255, 228, 225)
+KeyInput.TextColor3 = Color3.fromRGB(255, 105, 180)
+KeyInput.TextSize = 20
 KeyInput.BorderSizePixel = 0
 KeyInput.Font = Enum.Font.FredokaOne
 
@@ -77,10 +100,11 @@ UICornerKeyInput.CornerRadius = UDim.new(0.1, 0)
 CheckKeyButton.Parent = Frame
 CheckKeyButton.Size = UDim2.new(0.4, 0, 0.1, 0)
 CheckKeyButton.Position = UDim2.new(0.1, 0, 0.55, 0)
-CheckKeyButton.Text = "Check UwU"
+CheckKeyButton.Text = "Check Key"
 CheckKeyButton.BackgroundColor3 = Color3.fromRGB(255, 182, 193)
-CheckKeyButton.TextColor3 = Color3.fromRGB(255, 20, 147)
+CheckKeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 CheckKeyButton.BorderSizePixel = 0
+CheckKeyButton.TextSize = 20
 CheckKeyButton.Font = Enum.Font.FredokaOne
 
 local UICornerCheckKey = Instance.new("UICorner")
@@ -91,10 +115,11 @@ UICornerCheckKey.CornerRadius = UDim.new(0.1, 0)
 GetKeyButton.Parent = Frame
 GetKeyButton.Size = UDim2.new(0.4, 0, 0.1, 0)
 GetKeyButton.Position = UDim2.new(0.5, 0, 0.55, 0)
-GetKeyButton.Text = "Get Key OwO"
+GetKeyButton.Text = "Get Key"
 GetKeyButton.BackgroundColor3 = Color3.fromRGB(255, 182, 193)
-GetKeyButton.TextColor3 = Color3.fromRGB(255, 20, 147)
+GetKeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 GetKeyButton.BorderSizePixel = 0
+GetKeyButton.TextSize = 20
 GetKeyButton.Font = Enum.Font.FredokaOne
 
 local UICornerGetKey = Instance.new("UICorner")
@@ -105,10 +130,11 @@ UICornerGetKey.CornerRadius = UDim.new(0.1, 0)
 CopyDiscordButton.Parent = Frame
 CopyDiscordButton.Size = UDim2.new(0.8, 0, 0.1, 0)
 CopyDiscordButton.Position = UDim2.new(0.1, 0, 0.7, 0)
-CopyDiscordButton.Text = "Copy Discord <3"
+CopyDiscordButton.Text = "Copy Discord Link"
 CopyDiscordButton.BackgroundColor3 = Color3.fromRGB(255, 182, 193)
-CopyDiscordButton.TextColor3 = Color3.fromRGB(255, 20, 147)
+CopyDiscordButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 CopyDiscordButton.BorderSizePixel = 0
+CopyDiscordButton.TextSize = 27
 CopyDiscordButton.Font = Enum.Font.FredokaOne
 
 local UICornerDiscord = Instance.new("UICorner")
@@ -119,18 +145,17 @@ UICornerDiscord.CornerRadius = UDim.new(0.1, 0)
 CheckKeyButton.MouseButton1Click:Connect(function()
     if KeyInput.Text == validKey then
         StarterGui:SetCore("SendNotification", {
-            Title = "Success",
-            Text = "UwU Key Valid! <3",
+            Title = "Success <3",
+            Text = "UwU Key Validated! Loading...!",
             Icon = "rbxassetid://12345678",
             Duration = 3
         })
-        print(success <3)
-        wait(1)
-        ScreenGui:Destroy() -- Destroy the UI after successful validation
+        wait(3)
+        ScreenGui:Destroy()
     else
         StarterGui:SetCore("SendNotification", {
-            Title = "Error >.<",
-            Text = "Invalid Key QwQ",
+            Title = "Error QwQ",
+            Text = "Invalid Key! Try again! -_-",
             Icon = "rbxassetid://12345678",
             Duration = 3
         })
@@ -141,7 +166,7 @@ GetKeyButton.MouseButton1Click:Connect(function()
     setclipboard(keyURL)
     StarterGui:SetCore("SendNotification", {
         Title = "Copied!",
-        Text = "Key link copied UwU",
+        Text = "Key URL copied! UwU",
         Duration = 3
     })
 end)
@@ -150,7 +175,7 @@ CopyDiscordButton.MouseButton1Click:Connect(function()
     setclipboard(discordURL)
     StarterGui:SetCore("SendNotification", {
         Title = "Copied!",
-        Text = "Discord link copied OwO",
+        Text = "Discord link copied! <3",
         Duration = 3
     })
 end)
