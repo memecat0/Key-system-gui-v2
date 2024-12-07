@@ -59,16 +59,6 @@ Description.TextSize = 20
 Description.TextWrapped = true
 Description.Font = Enum.Font.FredokaOne
 
-Description2.Parent = Frame
-Description2.Size = UDim2.new(1, 0, 0.15, 0)
-Description2.Position = UDim2.new(0, 0, 0.15, 0)
-Description2.Text = "Credits: made by memecat0 and Tweaked By KanKai_Ku on Discord"
-Description2.TextColor3 = Color3.fromRGB(200, 200, 200)
-Description2.BackgroundTransparency = 1
-Description2.TextSize = 14
-Description2.TextWrapped = true
-Description2.Font = Enum.Font.FredokaOne
-
 -- Key Input
 KeyInput.Parent = Frame
 KeyInput.Size = UDim2.new(0.8, 0, 0.1, 0)
