@@ -51,8 +51,8 @@ Title.Font = Enum.Font.FredokaOne
 -- Description
 Description.Parent = Frame
 Description.Size = UDim2.new(1, 0, 0.15, 0)
-Description.Position = UDim2.new(0, 0, 0.1, 0)
-Description.Text = "Game Supported: [Name]\nCredits: made by memecat0 Tweaked | By KanKai_Ku on Discord"
+Description.Position = UDim2.new(0, 0, 0.2, 0)
+Description.Text = "Game Supported: [Name]"
 Description.TextColor3 = Color3.fromRGB(200, 200, 200)
 Description.BackgroundTransparency = 1
 Description.TextSize = 20
@@ -61,7 +61,7 @@ Description.Font = Enum.Font.FredokaOne
 
 Description2.Parent = Frame
 Description2.Size = UDim2.new(1, 0, 0.15, 0)
-Description2.Position = UDim2.new(0, 0, 0.2, 0)
+Description2.Position = UDim2.new(0, 0, 0.15, 0)
 Description2.Text = "Credits: made by memecat0 and Tweaked By KanKai_Ku on Discord"
 Description2.TextColor3 = Color3.fromRGB(200, 200, 200)
 Description2.BackgroundTransparency = 1
