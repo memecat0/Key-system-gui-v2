@@ -138,7 +138,11 @@ CheckKeyButton.MouseButton1Click:Connect(function()
             Icon = "rbxassetid://12345678",
             Duration = 3
         })
-        print("Success thank you :3 for wait 3 sec!")
+        StarterGui:SetCore("SendNotification", {
+        Title = "Success",
+        Text = "Key Granted! Thank you for wait 3 sec!!",
+        Duration = 1
+    })
         wait(3)
         print("hello")
         ScreenGui:Destroy() -- Destroy the UI after successful validation
